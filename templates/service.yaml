@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.env }}-{{ .Values.app }}-mongo
+  labels:
+    app: {{ .Values.app }}
+    component: mongo
+    env: {{ .Values.env }}
+spec:
+  selector:
+    app: {{ .Values.app }}
+    component: mongo
+    env: {{ .Values.env }}
+  ports:
+    - port: 27017
+      name: mongo
+      targetPort: mongo
+      protocol: TCP
