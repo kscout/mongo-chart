@@ -23,3 +23,4 @@ Complete the following steps to use the Mongo chart:
    application. This will be used as the value to the `app` label on all
    resources created by the Mongo chart. It can be used to associate the Mongo
    resources with the rest of your app's resources.
+3. Set the `global.env` key in your `values.yaml`
