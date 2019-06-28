@@ -1,5 +1,10 @@
-# Deployment environment, usually "prod" or "staging"
-#env: 
+# Global configuration shared by all charts
+#global:
+  # Deployment environment
+  #env:
 
-# Application mongo deployment will be supporting
-#app:
+  # App name
+  #app:
+
+# MongoDB user password
+#dbPassword:

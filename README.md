@@ -19,8 +19,5 @@ Complete the following steps to use the Mongo chart:
    ```
    Be sure to replace `<your chart path>` with the path to your
    repository's chart.
-2. Set the `mongo.app` key in your `values.yaml` to the name of your
-   application. This will be used as the value to the `app` label on all
-   resources created by the Mongo chart. It can be used to associate the Mongo
-   resources with the rest of your app's resources.
-3. Set the `global.env` key in your `values.yaml`
+2. Set the `global.env` and `global.app` values
+3. Set the `mongo.dbPassword` value
