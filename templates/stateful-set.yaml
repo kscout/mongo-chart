@@ -21,6 +21,10 @@ spec:
         component: mongo
         env: {{ .Values.global.env }}
     spec:
+      volumes:
+        - name: mongo-data
+          persistentVolumeClaim:
+            claimName: {{ .Values.global.env }}-{{ .Values.global.app }}-mongo
       containers:
         - name: mongo
           image: mongo:latest
@@ -44,18 +48,5 @@ spec:
             - name: mongo
               containerPort: 27017
           volumeMounts:
-            - name: {{ .Values.global.env }}-{{ .Values.global.app }}-mongo
+            - name: mongo-data
               mountPath: /data/db
-  volumeClaimTemplates:
-  - metadata:
-      name: {{ .Values.global.env }}-{{ .Values.global.app }}-mongo
-      labels:
-        app: {{ .Values.global.app }}
-        component: mongo
-        env: {{ .Values.global.env }}
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 5Gi
