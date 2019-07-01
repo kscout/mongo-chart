@@ -7,4 +7,5 @@
   #app:
 
 # MongoDB user password
+# (Required)
 #dbPassword:
