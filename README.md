@@ -4,6 +4,7 @@ MongoDB Helm chart.
 # Table Of Contents
 - [Overview](#overview)
 - [Use](#use)
+- [Release Checklist](#release-checklist)
 
 # Overview
 Many of our services require their own Mongo DB instance be deployed.  
@@ -21,3 +22,13 @@ Complete the following steps to use the Mongo chart:
    repository's chart.
 2. Set the `global.env` and `global.app` values
 3. Set the `mongo.dbPassword` value
+
+# Release Checklist
+When a new release occurs:
+
+1. Bump `version` in [`Chart.yaml`](Chart.yaml)
+2. [Create release](https://github.com/kscout/http-service-chart/releases/new) 
+   tagged `v<chart version>`
+3. Update submodules and open PR for the following repositories:
+   - [chat-bot-api](https://github.com/kscout/chat-bot-api)
+   - [serverless-registry-api](https://github.com/kscout/serverless-registry-api)
